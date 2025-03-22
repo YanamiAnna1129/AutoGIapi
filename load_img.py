@@ -1,0 +1,55 @@
+import cv2
+import os
+
+current_dir = os.path.dirname(__file__)
+
+
+t0 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '0.png'))
+t1 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '1.png'))
+t2 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '2.png'))
+t3 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '3.png'))
+t4 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '4.png'))
+t5 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '5.png'))
+t6 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '6.png'))
+t7 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '7.png'))
+t8 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '8.png'))
+t9 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '9.png'))
+t10 = cv2.imread(os.path.join(current_dir, 'picture', 'number', '10.png'))
+t0 = cv2.cvtColor(t0, cv2.COLOR_BGR2GRAY)
+t1 = cv2.cvtColor(t1, cv2.COLOR_BGR2GRAY)
+t2 = cv2.cvtColor(t2, cv2.COLOR_BGR2GRAY)
+t3 = cv2.cvtColor(t3, cv2.COLOR_BGR2GRAY)
+t4 = cv2.cvtColor(t4, cv2.COLOR_BGR2GRAY)
+t5 = cv2.cvtColor(t5, cv2.COLOR_BGR2GRAY)
+t6 = cv2.cvtColor(t6, cv2.COLOR_BGR2GRAY)
+t7 = cv2.cvtColor(t7, cv2.COLOR_BGR2GRAY)
+t8 = cv2.cvtColor(t8, cv2.COLOR_BGR2GRAY)
+t9 = cv2.cvtColor(t9, cv2.COLOR_BGR2GRAY)
+t10 = cv2.cvtColor(t10, cv2.COLOR_BGR2GRAY)
+e0 = cv2.cvtColor(cv2.imread(os.path.join(current_dir, 'picture', 'element', '0.png')), cv2.COLOR_BGR2GRAY)
+e1 = cv2.cvtColor(cv2.imread(os.path.join(current_dir, 'picture', 'element', '1.png')), cv2.COLOR_BGR2GRAY)
+e2 = cv2.cvtColor(cv2.imread(os.path.join(current_dir, 'picture', 'element', '2.png')), cv2.COLOR_BGR2GRAY)
+e4 = cv2.cvtColor(cv2.imread(os.path.join(current_dir, 'picture', 'element', '4.png')), cv2.COLOR_BGR2GRAY)
+e5 = cv2.cvtColor(cv2.imread(os.path.join(current_dir, 'picture', 'element', '5.png')), cv2.COLOR_BGR2GRAY)
+e6 = cv2.cvtColor(cv2.imread(os.path.join(current_dir, 'picture', 'element', '6.png')), cv2.COLOR_BGR2GRAY)
+temp_all = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'all.png'))
+temp_shui = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'water.png'))
+temp_huo = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'fire.png'))
+temp_fen = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'wind.png'))
+temp_lei = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'lei.png'))
+temp_cao = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'glass.png'))
+temp_bin = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'ice.png'))
+temp_yan = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'stone.png'))
+temp_shui_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'water_.png'))
+temp_huo_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'fire_.png'))
+temp_fen_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'wind_.png'))
+temp_lei_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'lei_.png'))
+temp_cao_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'glass_.png'))
+temp_bin_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'ice_.png'))
+temp_yan_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'stone_.png'))
+temp_all_ = cv2.imread(os.path.join(current_dir, 'picture', 'dice_color', 'all_.png'))
+
+hp_templ = [t0, t1,t2, t3, t4, t5, t6, t7, t8,t9, t10]
+dice_templ = [temp_all, temp_shui, temp_huo, temp_fen, temp_lei, temp_cao, temp_bin, temp_yan]
+dice_templ_ = [temp_all_, temp_shui_, temp_huo_, temp_fen_, temp_lei_, temp_cao_, temp_bin_, temp_yan_]
+element_templ = [e0, e1, e2, e4, e5, e6]
