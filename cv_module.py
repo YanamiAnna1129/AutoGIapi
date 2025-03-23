@@ -154,7 +154,7 @@ def get_current_dice(image, need_dices: list[int], n: int) -> list[int]:
     templ_8 = image[422:439, 1546:1565]
 
     name = ['万能', '水', '火', '风', '雷', '草', '冰', '岩']
-    need_element = need_dices
+    need_element = need_dices.copy()
     for ele in need_dices:
         need_element.append(ele)
 
@@ -213,8 +213,8 @@ def get_activate(image) -> list[int]:
             ret, thresh = cv2.threshold(gray, 224, 225, cv2.THRESH_BINARY_INV)
             white = np.sum(thresh == 0)
             positions.append(white)
-            best = max(positions)
-            best_position.append(positions.index(best))
+        best = max(positions)
+        best_position.append(positions.index(best))
     return best_position
 
 
