@@ -103,7 +103,7 @@ def get_attach_ele(image, activate1: int, activate2: int) -> tuple[list[int], li
 
 
 @get_image
-def get_reroll_dice(image, need_dices: list[int]) -> list[int]:
+def get_reroll_dice(image, need_dices: list[int]) -> list[bool]:
     """
     识别需要重掷的骰子
     :return: 按照从左到右的顺序, 需要的值为0, 不需要的值为1
@@ -139,7 +139,7 @@ def get_reroll_dice(image, need_dices: list[int]) -> list[int]:
 
 
 @get_image
-def get_current_dice(image, need_dices: list[int], n: int) -> list[int]:
+def get_current_dice(image, need_dices: list[int], n: int) -> int:
     """
     获取当前可用的骰子
     :return: 可用骰子为1, 不可用为0
@@ -176,8 +176,11 @@ def get_current_dice(image, need_dices: list[int], n: int) -> list[int]:
 
             if min_index in need_element:
                 need[min_index] += 1
+    number = 0
+    for num in need:
+        number += num
 
-    return need
+    return number
 
 
 @get_image
@@ -261,10 +264,10 @@ def judge_stage_pro_max(image):  # 角色
     return text
 
 
-def judge() -> str:
+def get_state() -> str:
     """
     判断当前的阶段
-    :return: 行动阶段, 等待阶段, unknown, 重投阶段
+    :return: 行动阶段, 等待阶段, unknown, 重投阶段, 选择角色
     """
     response = judge_stage()
 

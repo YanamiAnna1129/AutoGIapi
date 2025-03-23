@@ -41,36 +41,37 @@ def end():
     time.sleep(5)
 
 
-def harmony():
+def harmony(t):
     """
     调和手牌
     """
-    x1 = 840 + x_window
-    y1 = 900 + y_window
-    x2 = 1551 + x_window
-    y2 = 499 + y_window
-    pyautogui.click(797 + x_window, 443 + y_window, clicks=2, button='left')
-    time.sleep(0.5)
-    pyautogui.click(x1, y1, clicks=2, button='left')
-    pyautogui.mouseDown()
-    time.sleep(0.5)
-    pyautogui.mouseUp()
-    pyautogui.click(x1, y1, clicks=1, button='left')
-    pyautogui.moveTo(x2, y2, duration=0.1)
-    pyautogui.mouseUp()
-    pyautogui.click(x2, y2, clicks=2, button='left')
-    time.sleep(1)
-    pyautogui.mouseDown()
-    pyautogui.mouseUp()
-    print('INFO:已调和')
+    for _ in range(t):
+        x1 = 840 + x_window
+        y1 = 900 + y_window
+        x2 = 1551 + x_window
+        y2 = 499 + y_window
+        pyautogui.click(797 + x_window, 443 + y_window, clicks=2, button='left')
+        time.sleep(0.5)
+        pyautogui.click(x1, y1, clicks=2, button='left')
+        pyautogui.mouseDown()
+        time.sleep(0.5)
+        pyautogui.mouseUp()
+        pyautogui.click(x1, y1, clicks=1, button='left')
+        pyautogui.moveTo(x2, y2, duration=0.1)
+        pyautogui.mouseUp()
+        pyautogui.click(x2, y2, clicks=2, button='left')
+        time.sleep(1)
+        pyautogui.mouseDown()
+        pyautogui.mouseUp()
+        print('INFO:已调和')
 
-    time.sleep(1)
-    x = x_window + 789
-    y = y_window + 789
-    pyautogui.click(x, y, clicks=1, button='left')
-    print('INFO:已点击')
-    time.sleep(1)
-    clean()
+        time.sleep(1)
+        x = x_window + 789
+        y = y_window + 789
+        pyautogui.click(x, y, clicks=1, button='left')
+        print('INFO:已点击')
+        time.sleep(1)
+        clean()
 
 
 def click_dice(where: list[bool]):
@@ -91,26 +92,30 @@ def click_dice(where: list[bool]):
 
 
 def click_skill(what):  # 123技能
-    if what == 1:
-        print('INFO:将释放1技能')
-        pyautogui.click(1316 + x_window, 807 + y_window, clicks=1, button='left')
-        time.sleep(0.5)
-        pyautogui.mouseDown()
-        time.sleep(0.5)
-        pyautogui.mouseUp()
+    skill_x = [1316, 1423, 1500]
+    pyautogui.click(skill_x[what - 1] + x_window, 807 + y_window, clicks=1, button='left')
+    time.sleep(0.5)
+    pyautogui.mouseDown()
+    time.sleep(0.5)
+    pyautogui.mouseUp()
 
-    elif what == 2:
-        print('INFO:将释放2技能')
-        pyautogui.click(1423 + x_window, 807 + y_window, clicks=1, button='left')
-        time.sleep(0.5)
-        pyautogui.mouseDown()
-        time.sleep(0.5)
-        pyautogui.mouseUp()
 
-    elif what == 3:
-        print('INFO:将释放3技能')
-        pyautogui.click(1500 + x_window, 807 + y_window, clicks=1, button='left')
-        time.sleep(0.5)
-        pyautogui.mouseDown()
-        time.sleep(0.5)
-        pyautogui.mouseUp()
+
+def change(who):
+    change_x = [619, 791, 972]
+    if who <= 2:
+        pyautogui.click(change_x[who] + x_window, 626 + y_window, clicks=1, button='left')
+        time.sleep(1.4)
+    pyautogui.moveTo(1519 + x_window, 798 + y_window, duration=0.1)
+    pyautogui.mouseDown()
+    time.sleep(0.35)
+    pyautogui.mouseUp()
+    pyautogui.mouseDown()
+    time.sleep(0.35)
+    pyautogui.mouseUp()
+    clean()
+    time.sleep(5)
+
+
+
+
