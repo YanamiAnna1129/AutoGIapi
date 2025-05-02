@@ -1,3 +1,5 @@
+# 已更新强化学习部分
+
 # AutoGIapi
 - 使用示例详见example.py
 - 可提供的方法见cv_module.py和gui_module.py
